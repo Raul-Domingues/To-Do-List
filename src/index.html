@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <script src="script.js" defer></script>
+    <title>To-Do-List</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <img class="logo" src="./assets/Logo.png" alt="Logo 'To do'">
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="container-input">
+            <input class="input-text" type="text" placeholder="Adicione uma nova tarefa" maxlength="70" minlength="1">
+            <button type="button" class="input-button">Criar<img class="iconAdd" src="./assets/iconAdd.png"></button>
+        </div>
+
+        <div class="container-stats">
+            <p>Tarefas criadas: <span id="created-tasks">0</span></p>
+            <p>Tarefas concluídas: <span id="completed-tasks">0</span>/<span id="total-tasks">4</span></p>
+        </div>
+
+        <div class="empty">
+            <img class="icon-empty" src="./assets/Clipboard.png">
+            <h3>Você ainda não tem tarefas cadastradas</h3>
+            <p>Crie tarefas e organize seus itens a fazer</p>
+        </div>
+
+        <div class="container-list">
+            
+            <ul class="list">
+                   
+            </ul>
+        </div>
+
+    </main>
+</body>
+</html>
+
+<!-- 
+<li class="list-item">
+    <div class="custom-checkbox">
+        <input id="checkbox-1" type="checkbox">
+        <label for="checkbox-1">Tarefa Adicionada</label>
+    </div>
+    <div>
+        <img class="icon-edit" src="./assets/edit.png">
+        <img class="icon-trash" src="./assets/trash.png">
+    </div>
+</li>
+<li class="list-item">
+    <div class="custom-checkbox">
+        <input id="checkbox-2" type="checkbox">
+        <label for="checkbox-2">Tarefa Adicionada</label>
+    </div>
+</li>
+<li class="list-item">
+    <div class="custom-checkbox">
+        <input id="checkbox-3" type="checkbox">
+        <label for="checkbox-3">Tarefa Adicionada</label>
+    </div>
+</li>
+<li class="list-item">
+    <div class="custom-checkbox">
+        <input id="checkbox-4" type="checkbox">
+        <label for="checkbox-4">Tarefa Adicionada</label>
+    </div>
+</li>  -->

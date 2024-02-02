@@ -1,7 +1,6 @@
+import fastify from "fastify";
 import { PrismaClient } from "@prisma/client";
-import { createTaskSchema, deleteTaskSchema } from "./schemas/task";
-import { FastifyReply, FastifyRequest, fastify } from "fastify";
-import { number } from "zod";
+import { createTaskSchema, deleteTaskSchema } from "../schemas/task";
 
 const prisma = new PrismaClient();
 const app = fastify();
@@ -41,7 +40,7 @@ app.get('/task/:id', async (req, res) => {
                 id: Number(JSON.parse(id).id)
             }
         })
-        res.status(200).send(getTask)
+        res.status(200).send(getTask ? getTask : 'Tarefa não encontrada!')
     } catch(error) {
         console.log('Erro ao listar a tarefa', error)
     }
