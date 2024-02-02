@@ -5,8 +5,14 @@ const botaoDeletar = document.querySelector('.icon-trash')
 const botaoEditar = document.querySelector('.icon-edit')
 const tarefasCriadas = document.querySelector('#created-tasks')
 const totalTarefas = document.querySelector('#total-tasks')
+const checkboxItem = document.querySelector('.custom-checkbox label::before')
+const itemListado = document.querySelector('.list-item')
 
 let id = 1;
+
+botaoCriar.addEventListener('click', () => {
+    inputText.value ? adicionarTarefa() : alert('Digite uma tarefa');
+})
 
 function adicionarTarefa () {
     const listaVazia = document.querySelector('.empty');
@@ -30,10 +36,12 @@ function adicionarTarefa () {
     totalTarefas.textContent = lista.children.length;
 }
 
-
-botaoCriar.addEventListener('click', () => {
-    inputText.value ? adicionarTarefa() : alert('Digite uma tarefa');
+checkboxItem.addEventListener('click', (e) => {
+    const checkbox = e.target;
+    const item = checkbox.parentElement.parentElement;
+    item.classList.toggle('checked');
 })
 
-
-
+checkboxItem.addEventListener('click', () => {
+    itemListado.setAttribute(textDecoration, 'line-through');
+})
