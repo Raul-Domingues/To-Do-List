@@ -10,6 +10,7 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #333;
+    user-select: none;
 }
 
 .logo {
@@ -95,7 +96,7 @@ li {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-color: invisible;
+    background-color: transparent;
     border-radius: 50%;
     margin: 0 20px;
     cursor: pointer;
@@ -109,9 +110,13 @@ li {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='18' height='18' viewBox='0 0 24 24'%0Astyle='fill:%23FFFFFF;'%3E%3Cpath d='M 19.980469 5.9902344 A 1.0001 1.0001 0 0 0 19.292969 6.2929688 L 9 16.585938 L 5.7070312 13.292969 A 1.0001 1.0001 0 1 0 4.2929688 14.707031 L 8.2929688 18.707031 A 1.0001 1.0001 0 0 0 9.7070312 18.707031 L 20.707031 7.7070312 A 1.0001 1.0001 0 0 0 19.980469 5.9902344 z'%3E%3C/path%3E%3C/svg%3E");
 }
 
-.list-item .checked{
+.checked{
     text-decoration: line-through;
-    color: #666;
+    color: #40913d;
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    overflow-wrap: break-word;
 }
 
 .list-item {
@@ -151,4 +156,20 @@ li {
 
 .hidden {
     display: none;
+}
+
+.check input {
+    display: block;
+    position: absolute;
+    top: 370px;
+    right: 435px;
+    height: 60px;
+    width: 700px;
+    background-color: #444;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    outline: none;
+    color: #888;
+    font-weight: bold;
 }
