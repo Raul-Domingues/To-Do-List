@@ -1,6 +1,7 @@
-import fastify from "fastify";
 import { PrismaClient } from "@prisma/client";
+import fastify from "fastify";
 import cors from "@fastify/cors";
+import axios from "axios";
 
 // import { createTaskSchema, deleteTaskSchema } from "../schemas/task";
 const prisma = new PrismaClient();
@@ -15,11 +16,11 @@ app.post("/createTask", async (req, res) => {
 
         const resultado = await prisma.task.create({
             data: {
-                title,
-                completed,
+                title : title,
+                completed: completed,
             },
         });
-        res.status(201).send({ message: resultado.title + ' criada com sucesso!' });
+        res.status(201).send(resultado);
     } catch (error) {
         console.log('Erro ao criar tarefa', error)
     }

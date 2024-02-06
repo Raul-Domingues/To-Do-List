@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'https://cdn.jsdelivr.net/npm/axios@1.3.5/+esm';
 
 const inputText = document.querySelector('.input-text');
 const botaoCriar = document.querySelector('.input-button');
@@ -84,33 +84,35 @@ inputText.addEventListener("keyup", function (event) {
 });
 
 // ADICIONAR TAREFA COM BOTAO CRIAR
-botaoCriar.addEventListener('click', () => {
-    inputText.value ? adicionarTarefa() : alert('Digite uma tarefa');
-});
+// botaoCriar.addEventListener('click', () => {
+// });
 
 botaoCriar.addEventListener('click', async () => {
-    if (inputText.value) {
+    
+    if (inputText.value !== '') {
+        adicionarTarefa();
         try {
             const response = await axios.post('/createTask', {
                 title: inputText.value,
                 completed: false,
             });
 
-            console.log('Resposta do Backend:', response.data);
+            if(response.status === 200) {
+                lista.appendChild(criarListItem());
 
-            // Adicione a tarefa à lista se a criação no servidor foi bem-sucedida
-            lista.appendChild(criarListItem());
+                inputText.value = '';
+                id++;
+    
+                tarefasCriadas.textContent = lista.children.length;
+                totalTarefas.textContent = lista.children.length;
+            }
 
-            inputText.value = '';
-            id++;
-
-            tarefasCriadas.textContent = lista.children.length;
-            totalTarefas.textContent = lista.children.length;
         } catch (error) {
             console.error('Erro na requisição:', error);
             // Exiba uma mensagem de erro ao usuário se necessário
         }
     } else {
+        console.log(inputText.value);
         alert('Digite uma tarefa');
     }
 });
