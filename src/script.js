@@ -6,13 +6,13 @@ const listaContainer = document.querySelector('.container-list');
 const iconContainer = document.querySelector('.icon-container');
 
 const lista = document.querySelector('.list'); 
-const botaoDeletar = document.querySelector('.icon-trash')
-const botaoEditar = document.querySelector('.icon-edit')
-const itemListado = document.querySelector('.list-item')
+const botaoDeletar = document.querySelector('.icon-trash');
+const botaoEditar = document.querySelector('.icon-edit');
+const itemListado = document.querySelector('.list-item');
 
-const tarefasCriadas = document.querySelector('#created-tasks')
-const totalTarefas = document.querySelector('#total-tasks')
-const tarefasConcluidas = document.querySelector('#completed-tasks')
+const tarefasCriadas = document.querySelector('#created-tasks');
+const totalTarefas = document.querySelector('#total-tasks');
+const tarefasConcluidas = document.querySelector('#completed-tasks');
 
 const checkInput = document.querySelector('.custom-checkbox label:before');
 
@@ -64,7 +64,7 @@ function criarListItem() {
     return listItem;
 }
 
-// ADICIONAR TAREFA NA LISTA
+// ADICIONAR TAREFA NA LISTAS
 function adicionarTarefa() {
     
     lista.appendChild(criarListItem());

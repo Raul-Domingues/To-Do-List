@@ -68,7 +68,7 @@ app.delete('/deleteAllTasks', async (req, res) => {
 })
 
 //ROTA para deletar uma tarefa
-app.delete('/task/:id', async (req, res) => {
+app.delete('/deletarTask/:id', async (req, res) => {
     try {
         const id = JSON.stringify(req.params);
         await prisma.task.delete({
@@ -82,7 +82,7 @@ app.delete('/task/:id', async (req, res) => {
     }
 });
 
-app.put('/task/:id', async (req, res) => {
+app.put('/atualizarTask/:id', async (req, res) => {
     const id = JSON.stringify(req.params);
     const { title, completed } = req.body as { title: string, completed: boolean };
 
